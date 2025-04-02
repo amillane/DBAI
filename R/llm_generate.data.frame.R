@@ -158,7 +158,7 @@ llm_generate.data.frame <- function(
   if('prompt' %in% colnames(source)){
     parentInfo$prompt <- TRUE
     source <- source %>%
-    rename(prompts = prompt)
+    rename(prompted = prompt)
     }
 
   ### Add all variables into these calls, not just OpenAI ones.
@@ -208,9 +208,9 @@ llm_generate.data.frame <- function(
 if(parentInfo$prompt == TRUE){
   source <- source |>
     dplyr::ungroup() |>
-    rename(prompt = prompts)
+    rename(prompt = prompted)
 } else {
-  source <- source |>
+  source <- source |>    
     dplyr::ungroup()
 }
   ### Warnings and Messages ---------------------------
