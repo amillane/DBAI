@@ -159,6 +159,7 @@ llm_generate.data.frame <- function(
     parentInfo$prompt <- TRUE
     source <- source %>%
     rename(temp = prompt)
+    print('In this loop, hell ya')
     }
 
   ### Add all variables into these calls, not just OpenAI ones.
